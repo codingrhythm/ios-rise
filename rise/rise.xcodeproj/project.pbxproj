@@ -22,6 +22,7 @@
 		143D80B517B9E43E00D63580 /* ColorStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80B417B9E43E00D63580 /* ColorStepper.m */; };
 		143D80B817B9F4C200D63580 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80B717B9F4C200D63580 /* UIColor+HexString.m */; };
 		143D80BB17B9FD3B00D63580 /* RadiusStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80BA17B9FD3B00D63580 /* RadiusStepper.m */; };
+		143D80BE17BA0C1600D63580 /* UITimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80BD17BA0C1600D63580 /* UITimeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		143D80B717B9F4C200D63580 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		143D80B917B9FD3B00D63580 /* RadiusStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiusStepper.h; sourceTree = "<group>"; };
 		143D80BA17B9FD3B00D63580 /* RadiusStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiusStepper.m; sourceTree = "<group>"; };
+		143D80BC17BA0C1600D63580 /* UITimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITimeView.h; sourceTree = "<group>"; };
+		143D80BD17BA0C1600D63580 /* UITimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITimeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 			children = (
 				143D80AD17B9CEFD00D63580 /* UIGradientBackgroundView.h */,
 				143D80AE17B9CEFD00D63580 /* UIGradientBackgroundView.m */,
+				143D80BC17BA0C1600D63580 /* UITimeView.h */,
+				143D80BD17BA0C1600D63580 /* UITimeView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				143D80B517B9E43E00D63580 /* ColorStepper.m in Sources */,
 				143D80B817B9F4C200D63580 /* UIColor+HexString.m in Sources */,
 				143D80BB17B9FD3B00D63580 /* RadiusStepper.m in Sources */,
+				143D80BE17BA0C1600D63580 /* UITimeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

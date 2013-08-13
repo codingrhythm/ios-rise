@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITimeView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <TimeViewDelegate>
 
 @end

@@ -13,12 +13,13 @@
 
 @interface ViewController (){
     UIGradientBackgroundView *bgView;
-    NSMutableArray *colors1;
+    NSMutableArray *gradientsCache;
     int colorIdx;
     ColorStepper *colorStepper;
     ColorStepper *colorStepper2;
     ColorStepper *colorStepper3;
     RadiusStepper *radiusStepper;
+    UITimeView *timeView;
 }
 
 @end
@@ -28,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    colors1 = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
     bgView = [[UIGradientBackgroundView alloc] initWithFrame:self.view.frame];
     
@@ -84,20 +84,83 @@
     
     colorIdx = 0;
     
+    timeView = [[UITimeView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 60.0f)];
+    timeView.delegate = self;
+    [self.view addSubview:timeView];
+    
+    [self cacheGradients];
+    
+}
+
+- (void)cacheGradients
+{
+    gradientsCache = [[NSMutableArray alloc] init];
+    
+    UIColor *color1;
+    UIColor *color2;
+    UIColor *color3;
+    CGGradientRef gradient;
+    for (int i = 0; i < [[colorStepper colors] count]; i++){
+        color1 = [[colorStepper colors] objectAtIndex:i];
+        color2 = [[colorStepper2 colors] objectAtIndex:i];
+        color3 = [[colorStepper3 colors] objectAtIndex:i];
+        gradient  = [UIGradientBackgroundView generateGradientWithColor1:color1
+                                                                  color2:color2
+                                                                  color3:color3];
+        
+        [gradientsCache addObject:(__bridge id)gradient];
+        
+    }
+}
+
+- (void)positionChangedWithAmount:(CGFloat)changes
+{
+    CGRect frame = timeView.frame;
+    CGFloat newY = frame.origin.y + changes;
+    
+    if (newY < 0) newY = 0;
+    
+    if (newY > self.view.frame.size.height - frame.size.height) newY = self.view.frame.size.height - frame.size.height;
+    
+    CGRect newFrame = CGRectMake(0.0f, newY, self.view.frame.size.width, timeView.frame.size.height);
+    [timeView setFrame:newFrame];
+    
+    CGFloat percent = newY / (self.view.frame.size.height - frame.size.height);
+    colorIdx = (int)(gradientsCache.count * percent);
+    if (colorIdx > gradientsCache.count - 1){
+        colorIdx = gradientsCache.count - 1;
+    }
+    
+    [bgView setGradient:(CGGradientRef)[gradientsCache objectAtIndex:colorIdx]
+             withRadius:[[[radiusStepper radiuses] objectAtIndex:colorIdx] floatValue]];
+    
+    
+
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = (UITouch *)[[touches allObjects] objectAtIndex:0];
+    
+    /*UITouch *touch = (UITouch *)[[touches allObjects] objectAtIndex:0];
     CGPoint location = [touch locationInView:[touch view]];
-    CGFloat y = location.y >=0 ? location.y : 0;
-    CGFloat percent = y / self.view.frame.size.height;
-    colorIdx = (int)(colorStepper.colors.count * percent);
-    [bgView setGradientWithColor1:[[colorStepper colors] objectAtIndex:colorIdx]
-                           color2:[[colorStepper2 colors] objectAtIndex:colorIdx]
-                           color3:[[colorStepper3 colors] objectAtIndex:colorIdx]
-                        andRadius:[[[radiusStepper radiuses] objectAtIndex:colorIdx] floatValue]];
+    CGFloat newY = location.y;
+    
+    if (newY < 0) newY = 0;
+    
+    if (newY > self.view.frame.size.height) newY = self.view.frame.size.height;
+
+    
+    CGFloat percent = newY / self.view.frame.size.height;
+    colorIdx = (int)(gradientsCache.count * percent);
+    if (colorIdx > gradientsCache.count - 1){
+        colorIdx = gradientsCache.count - 1;
+    }
+    
+    [bgView setGradient:(CGGradientRef)[gradientsCache objectAtIndex:colorIdx]
+             withRadius:[[[radiusStepper radiuses] objectAtIndex:colorIdx] floatValue]];*/
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
