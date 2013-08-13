@@ -71,16 +71,16 @@
     [colorStepper3 addColor:[UIColor colorWithHexString:@"#061927"] withSteps:35];
     
     radiusStepper = [[RadiusStepper alloc] initWithBaseRadius:0.6];
-    [radiusStepper addRadius:0.7 withStep:36];
+    [radiusStepper addRadius:0.8 withStep:36];
+    [radiusStepper addRadius:0.7 withStep:24];
     [radiusStepper addRadius:0.6 withStep:24];
-    [radiusStepper addRadius:0.5 withStep:24];
     [radiusStepper addRadius:0.2 withStep:36];
-    [radiusStepper addRadius:0.2 withStep:24];
-    [radiusStepper addRadius:0.6 withStep:72];
-    [radiusStepper addRadius:0.5 withStep:12];
-    [radiusStepper addRadius:0.5 withStep:15];
+    [radiusStepper addRadius:0.3 withStep:24];
+    [radiusStepper addRadius:0.5 withStep:72];
+    [radiusStepper addRadius:0.6 withStep:12];
+    [radiusStepper addRadius:0.8 withStep:15];
     [radiusStepper addRadius:0.6 withStep:9];
-    [radiusStepper addRadius:0.5 withStep:35];
+    [radiusStepper addRadius:0.6 withStep:35];
     
     colorIdx = 0;
     
@@ -131,7 +131,7 @@
         colorIdx = gradientsCache.count - 1;
     }
     
-    [timeView updateTimeWithIndex:colorIdx];
+    [timeView updateTimeWithIndex:(int)(colorIdx/3)];
     
     [bgView setGradient:(CGGradientRef)[gradientsCache objectAtIndex:colorIdx]
              withRadius:[[[radiusStepper radiuses] objectAtIndex:colorIdx] floatValue]];

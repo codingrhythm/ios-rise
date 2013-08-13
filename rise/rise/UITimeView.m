@@ -44,7 +44,7 @@
 
 - (void)updateTimeWithIndex:(int)index
 {
-    int seconds = index * 5 * 60;
+    int seconds = index * 15 * 60;
     NSDate *selectedTime = [[NSDate alloc] initWithTimeInterval:seconds sinceDate:_date];
     
     NSDateFormatter *formatter;
@@ -59,7 +59,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.2f]];
+    [self setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.15f]];
     _touched = YES;
 }
 
