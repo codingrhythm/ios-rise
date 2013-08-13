@@ -45,12 +45,18 @@
     CGFloat blueStepSize = (toBlue - fromBlue) / steps;
     CGFloat alphaStepSize = (toAlpha - fromAlpha) / steps;
     
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    CGFloat alpha;
+    UIColor *color;
+    
     for (int i = 0; i < steps; i++){
-        CGFloat red = fromRed + i * redStepSize;
-        CGFloat green = fromGreen + i * greenStepSize;
-        CGFloat blue = fromBlue + i * blueStepSize;
-        CGFloat alpha = fromAlpha + i * alphaStepSize;
-        UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        red = fromRed + i * redStepSize;
+        green = fromGreen + i * greenStepSize;
+        blue = fromBlue + i * blueStepSize;
+        alpha = fromAlpha + i * alphaStepSize;
+        color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
         [_colors addObject:color];
     }
 }

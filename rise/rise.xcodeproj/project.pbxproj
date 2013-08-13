@@ -21,6 +21,7 @@
 		143D80B117B9CF9700D63580 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D80B017B9CF9700D63580 /* QuartzCore.framework */; };
 		143D80B517B9E43E00D63580 /* ColorStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80B417B9E43E00D63580 /* ColorStepper.m */; };
 		143D80B817B9F4C200D63580 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80B717B9F4C200D63580 /* UIColor+HexString.m */; };
+		143D80BB17B9FD3B00D63580 /* RadiusStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 143D80BA17B9FD3B00D63580 /* RadiusStepper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		143D80B417B9E43E00D63580 /* ColorStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorStepper.m; sourceTree = "<group>"; };
 		143D80B617B9F4C200D63580 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
 		143D80B717B9F4C200D63580 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		143D80B917B9FD3B00D63580 /* RadiusStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiusStepper.h; sourceTree = "<group>"; };
+		143D80BA17B9FD3B00D63580 /* RadiusStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiusStepper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				143D80B717B9F4C200D63580 /* UIColor+HexString.m */,
 				143D80B317B9E43E00D63580 /* ColorStepper.h */,
 				143D80B417B9E43E00D63580 /* ColorStepper.m */,
+				143D80B917B9FD3B00D63580 /* RadiusStepper.h */,
+				143D80BA17B9FD3B00D63580 /* RadiusStepper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				143D80AF17B9CEFD00D63580 /* UIGradientBackgroundView.m in Sources */,
 				143D80B517B9E43E00D63580 /* ColorStepper.m in Sources */,
 				143D80B817B9F4C200D63580 /* UIColor+HexString.m in Sources */,
+				143D80BB17B9FD3B00D63580 /* RadiusStepper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

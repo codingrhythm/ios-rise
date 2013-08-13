@@ -10,6 +10,6 @@
 
 @interface UIGradientBackgroundView : UIView
 
-- (void) setGradientWithColor1:(UIColor *)color1 andColor2:(UIColor *)color2;
+- (void) setGradientWithColor1:(UIColor *)color1 color2:(UIColor *)color2 color3:(UIColor *)color3 andRadius:(CGFloat)radius;
 
 @end
