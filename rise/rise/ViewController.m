@@ -131,36 +131,14 @@
         colorIdx = gradientsCache.count - 1;
     }
     
+    [timeView updateTimeWithIndex:colorIdx];
+    
     [bgView setGradient:(CGGradientRef)[gradientsCache objectAtIndex:colorIdx]
              withRadius:[[[radiusStepper radiuses] objectAtIndex:colorIdx] floatValue]];
     
     
 
 }
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    
-    /*UITouch *touch = (UITouch *)[[touches allObjects] objectAtIndex:0];
-    CGPoint location = [touch locationInView:[touch view]];
-    CGFloat newY = location.y;
-    
-    if (newY < 0) newY = 0;
-    
-    if (newY > self.view.frame.size.height) newY = self.view.frame.size.height;
-
-    
-    CGFloat percent = newY / self.view.frame.size.height;
-    colorIdx = (int)(gradientsCache.count * percent);
-    if (colorIdx > gradientsCache.count - 1){
-        colorIdx = gradientsCache.count - 1;
-    }
-    
-    [bgView setGradient:(CGGradientRef)[gradientsCache objectAtIndex:colorIdx]
-             withRadius:[[[radiusStepper radiuses] objectAtIndex:colorIdx] floatValue]];*/
-    
-}
-
 
 - (void)didReceiveMemoryWarning
 {

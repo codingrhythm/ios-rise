@@ -18,7 +18,10 @@
 
 @property (strong, nonatomic) UILabel *timeLabel;
 @property (nonatomic) BOOL touched;
+@property (strong, nonatomic) NSDate *date;
 
 @property (strong, nonatomic) id<TimeViewDelegate> delegate;
+
+- (void)updateTimeWithIndex:(int)index;
 
 @end
